@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-grey: #1b1b32;
+  --light-grey: #f5f6f7;
+  --black: #000;
+  --white: #fff;
+  --grey: #3b3b4f;
+  --golden-yellow: #fecc4c;
+  --yellow: #ffcc4c;
+  --gold: #feac32;
+  --orange: #ffac33;
+  --dark-orange: #f89808;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--light-grey);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  color: var(--dark-grey);
+  text-align: center;
+  margin: 25px 0;
+  font-size: 2rem;
+}
+
+#dessert-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dessert-card {
+  background-color: var(--white);
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(33.333% - 40px);
+  max-width: 300px;
+}
+
+.dessert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dessert-price {
+  font-size: 1.4rem;
+  color: var(--dark-grey);
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--golden-yellow);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--orange);
+}
+
+#cart-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#cart-container {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: var(--white);
+  width: 300px;
+  max-height: calc(100vh - 120px);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.product {
+  margin-bottom: 15px;
+}
+
+.product:last-child {
+  margin-bottom: 0;
+}
+
+.product-count {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.product-category {
+  font-style: italic;
+  color: var(--grey);
+}
+
+@media (max-width: 768px) {
+  .dessert-card {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .dessert-card {
+    width: calc(100% - 40px);
+  }
+}
